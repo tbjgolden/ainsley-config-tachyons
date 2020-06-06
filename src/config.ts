@@ -62,7 +62,7 @@ export const config: Ainsley = {
         ]
       ] as AinsleyVariations,
       variables: {
-        color: {
+        '?color': {
           'black': '#000',
           'near-black': '#111',
           'dark-gray': '#333',
@@ -128,7 +128,7 @@ export const config: Ainsley = {
           'initial': 'initial',
           'unset': 'unset'
         },
-        aspectRatio: {
+        '?aspectRatio': {
           '16x9': '56.25%',
           '9x16': '177.77%',
           '4x3': '75%',
@@ -141,38 +141,38 @@ export const config: Ainsley = {
           '5x7': '140%',
           '1x1': '100%'
         },
-        placement: {
+        '?placement': {
           top: 'top',
           left: 'left',
           right: 'right',
           bottom: 'bottom',
           center: 'center'
         },
-        direction: {
+        '?direction': {
           top: 'top',
           left: 'left',
           right: 'right',
           bottom: 'bottom'
         },
-        directionAbbrev: {
+        '?directionAbbrev': {
           t: 'top',
           r: 'right',
           b: 'bottom',
           l: 'left'
         },
-        directionScale: {
+        '?directionScale': {
           '0': '0',
           '1': '1rem',
           '2': '2rem',
           '-1': '-1rem',
           '-2': '-2rem'
         },
-        outline: {
+        '?outline': {
           '': '1px solid',
           '-transparent': '1px solid transparent',
           '-0': '0'
         },
-        brScale: {
+        '?brScale': {
           '0': ' 0',
           '1': '.125rem',
           '2': '.25rem',
@@ -184,13 +184,13 @@ export const config: Ainsley = {
           '-initial': ' initial',
           '-unset': ' unset'
         },
-        borderStyle: {
+        '?borderStyle': {
           dotted: 'dotted',
           dashed: 'dashed',
           solid: 'solid',
           none: 'none'
         },
-        borderWidth: {
+        '?borderWidth': {
           '0': '0',
           '1': '.125rem',
           '2': '.25rem',
@@ -198,14 +198,14 @@ export const config: Ainsley = {
           '4': '1rem',
           '5': '2rem'
         },
-        shadow: {
+        '?shadow': {
           '1': '0 0 4px 2px',
           '2': '0 0 8px 2px',
           '3': '2px 2px 4px 2px',
           '4': '2px 2px 8px 0',
           '5': '4px 4px 8px 0'
         },
-        scale: {
+        '?scale': {
           '0': '0',
           '1': '.25rem',
           '2': '.5rem',
@@ -221,24 +221,24 @@ export const config: Ainsley = {
           'auto': 'auto',
           'inherit': 'inherit'
         },
-        float: {
+        '?float': {
           l: 'left',
           r: 'right',
           n: 'none'
         },
-        textAlign: {
+        '?textAlign': {
           l: 'left',
           r: 'right',
           c: 'center',
           j: 'justify'
         },
-        textTransform: {
+        '?textTransform': {
           c: 'capitalize',
           l: 'lowercase',
           u: 'uppercase',
           n: 'none'
         },
-        fontWeight: {
+        '?fontWeight': {
           '1': 100,
           '2': 200,
           '3': 300,
@@ -249,7 +249,7 @@ export const config: Ainsley = {
           '8': 800,
           '9': 900
         },
-        widthAndHeightScale: {
+        '?widthAndHeightScale': {
           '0': '0',
           '1': '1rem',
           '2': '2rem',
@@ -259,7 +259,7 @@ export const config: Ainsley = {
           '-auto': 'auto',
           '-inherit': 'inherit'
         },
-        maxWidthScale: {
+        '?maxWidthScale': {
           '1': '1rem',
           '2': '2rem',
           '3': '4rem',
@@ -270,7 +270,7 @@ export const config: Ainsley = {
           '8': '64rem',
           '9': '96rem'
         },
-        display: {
+        '?display': {
           'n': 'none',
           'b': 'block',
           'i': 'inline',
@@ -283,7 +283,7 @@ export const config: Ainsley = {
           't-column': 'table-column',
           't-column-group': 'table-column-group'
         },
-        fontSize: {
+        '?fontSize': {
           '-6': '6rem',
           '-headline': '6rem',
           '-5': '5rem',
@@ -296,17 +296,17 @@ export const config: Ainsley = {
           '6': '.875rem',
           '7': '.75rem'
         },
-        flexChange: {
+        '?flexChange': {
           '0': 0,
           '1': 1
         },
-        clear: {
+        '?clear': {
           l: 'left',
           r: 'right',
           b: 'both',
           n: 'none'
         },
-        percentage: {
+        '?percentage': {
           '0': 0,
           '025': 2.5,
           '05': 5,
@@ -329,7 +329,7 @@ export const config: Ainsley = {
           'third': 33.33333,
           'two-thirds': 66.66667
         },
-        opacity: {
+        '?opacity': {
           '0': 0,
           '025': 0.025,
           '05': 0.05,
@@ -344,29 +344,29 @@ export const config: Ainsley = {
           '90': 0.9,
           '100': 1
         },
-        tracking: {
+        '?tracking': {
           '': '.1em',
           '-tight': '-.05em',
           '-mega': '.25em'
         },
-        lineHeight: {
+        '?lineHeight': {
           solid: 1,
           title: 1.25,
           copy: 1.5
         },
-        overflow: {
+        '?overflow': {
           visible: 'visible',
           hidden: 'hidden',
           scroll: 'scroll',
           auto: 'auto'
         },
-        position: {
+        '?position': {
           static: 'static',
           relative: 'relative',
           absolute: 'absolute',
           fixed: 'fixed'
         },
-        rotate: {
+        '?rotate': {
           '45': 45,
           '90': 90,
           '135': 135,
@@ -375,16 +375,16 @@ export const config: Ainsley = {
           '270': 270,
           '315': 315
         },
-        measure: {
+        '?measure': {
           '': '30em',
           '-wide': '34em',
           '-narrow': '20em'
         },
-        spacing: {
+        '?spacing': {
           m: 'margin',
           p: 'padding'
         },
-        textDecoration: {
+        '?textDecoration': {
           'strike': 'line-through',
           'underline': 'underline',
           'no-underline': 'none'

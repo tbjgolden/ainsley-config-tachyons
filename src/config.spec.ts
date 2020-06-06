@@ -33,7 +33,7 @@ describe('config tests', () => {
   })
 
   // variables without modifiers makes your config less flexible
-  test.skip('no variables without modifiers', async () => {
+  test('no variables without modifiers', async () => {
     expect(getUnmoddedVariables(await flatConfig)).toEqual([])
   })
 
