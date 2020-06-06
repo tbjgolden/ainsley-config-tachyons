@@ -1,7 +1,7 @@
 {
-  "name": "ainsley-config-starter",
+  "name": "ainsley-config-tachyons",
   "version": "0.0.0-semantically-released",
-  "description": "Starter config and template for creating shareable configs",
+  "description": "`ainsley` config for Tachyons",
   "main": "dist/ainsley-config-starter.cjs.js",
   "module": "dist/ainsley-config-starter.esm.js",
   "jsnext:main": "dist/ainsley-config-starter.esm.js",
