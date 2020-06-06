@@ -107,7 +107,7 @@ const getCjsConfig = (input, bundleType) => ({
   input,
   external: getExternal(bundleType),
   output: {
-    file: `dist/ainsley-config-starter.cjs.js`,
+    file: `dist/ainsley-config-tachyons.cjs.js`,
     format: 'cjs',
     sourcemap: true
   },
@@ -129,7 +129,7 @@ const getUmdConfig = (input, bundleType) => ({
   input,
   external: getExternal(bundleType),
   output: {
-    file: `dist/ainsley-config-starter.umd.${
+    file: `dist/ainsley-config-tachyons.umd.${
       isProduction(bundleType) ? 'production' : 'development'
     }.js`,
     format: 'umd',
