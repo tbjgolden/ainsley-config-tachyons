@@ -1,5 +1,7 @@
 import { Ainsley, validate, generate, minify, flatten } from 'ainsley'
 import { parse } from 'css-tree'
+import { compare } from 'compare-stylesheet'
+import fs from 'fs'
 import { config, options } from './config'
 
 describe('config tests', () => {
@@ -40,6 +42,39 @@ describe('config tests', () => {
   // minify succeeds
   test('minifies successfully', async () => {
     expect(async () => minify(await flatConfig)).not.toThrow()
+  })
+
+  // contains at least all the same contents as the original framework
+  test('is a superset of the og framework', async () => {
+    expect(
+      compare(
+        fs.readFileSync(
+          require.resolve('tachyons/css/tachyons.min.css'),
+          'utf8'
+        ),
+        generate(await flatConfig, options)
+      )[1]
+    ).toEqual([
+      ['.bg-top', 'background-position', '50%'],
+      [
+        '@media screen and (min-width:30em) and (max-width:60em)',
+        '.bg-top-m',
+        'background-position',
+        '50%'
+      ],
+      [
+        '@media screen and (min-width:30em)',
+        '.bg-top-ns',
+        'background-position',
+        '50%'
+      ],
+      [
+        '@media screen and (min-width:60em)',
+        '.bg-top-l',
+        'background-position',
+        '50%'
+      ]
+    ])
   })
 })
 

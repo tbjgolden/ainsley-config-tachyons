@@ -28,6 +28,9 @@ export const config: Ainsley = {
     img {
       max-width: 100%;
     }
+    abbr[title] {
+      -webkit-text-decoration: underline dotted;
+    }
     .nested-copy-line-height p, .nested-copy-line-height ul,
     .nested-copy-line-height ol { line-height: 1.5; }
     .nested-headline-line-height h1, .nested-headline-line-height h2,
@@ -143,10 +146,10 @@ export const config: Ainsley = {
         },
         '?placement': {
           top: 'top',
-          left: 'left',
-          right: 'right',
+          left: '0',
+          right: '100%',
           bottom: 'bottom',
-          center: 'center'
+          center: '50%'
         },
         '?direction': {
           top: 'top',
@@ -497,7 +500,14 @@ export const config: Ainsley = {
         ],
         ['flex', [['display', 'flex']]],
         ['inline-flex', [['display', 'inline-flex']]],
-        ['flex-auto', [['flex', '1 1 auto']]],
+        [
+          'flex-auto',
+          [
+            ['flex', '1 1 auto'],
+            ['min-height', '0'],
+            ['min-width', '0']
+          ]
+        ],
         ['flex-none', [['flex', 'none']]],
         [
           'FLEX-direction',
@@ -574,21 +584,27 @@ export const config: Ainsley = {
         ],
         ['flex-grow-', [['flex-grow', '{flexChange}']]],
         ['flex-shrink-', [['flex-shrink', '{flexChange}']]],
-        ['f', [['float', '{float}']]],
+        [
+          'f',
+          [
+            ['float', '{float}'],
+            ['_display', 'inline']
+          ]
+        ],
         `
-        .sans-serif { font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; }
+        .sans-serif { font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif; }
         .serif { font-family: georgia, times, serif; }
         .system-sans-serif { font-family: sans-serif; }
         .system-serif { font-family: serif; }
         code, .code { font-family: Consolas, monaco, monospace; }
-        .courier { font-family: 'Courier Next', courier, monospace; }
-        .helvetica { font-family: 'helvetica neue', helvetica, sans-serif; }
-        .avenir { font-family: 'avenir next', avenir, sans-serif; }
+        .courier { font-family: Courier Next, courier, monospace; }
+        .helvetica { font-family: helvetica neue, helvetica, sans-serif; }
+        .avenir { font-family: avenir next, avenir, sans-serif; }
         .athelas { font-family: athelas, georgia, serif; }
         .georgia { font-family: georgia, serif; }
         .times { font-family: times, serif; }
-        .bodoni { font-family: "Bodoni MT", serif; }
-        .calisto { font-family: "Calisto MT", serif; }
+        .bodoni { font-family: Bodoni MT, serif; }
+        .calisto { font-family: Calisto MT, serif; }
         .garamond { font-family: garamond, serif; }
         .baskerville { font-family: baskerville, serif; }
         `,
@@ -627,6 +643,7 @@ export const config: Ainsley = {
         ['', [['position', '{position}']]],
         ['o-', [['opacity', '{opacity}']]],
         ['rotate-', [['transform', 'rotate({rotate}deg)']]],
+        ['rotate-', [['-webkit-transform', 'rotate({rotate}deg)']]],
         ['', [['color', '{color}']]],
         ['color-inherit', [['color', 'inherit']]],
         ['bg-', [['background-color', '{color}']]],
@@ -688,6 +705,7 @@ export const config: Ainsley = {
         [
           'clip',
           [
+            ['_position', 'absolute'],
             ['position', 'fixed !important'],
             ['clip', 'rect(1px,1px,1px,1px)'],
             ['clip', 'rect(1px 1px 1px 1px)']
@@ -714,16 +732,16 @@ export const config: Ainsley = {
         .hide-child .child { opacity: 0; transition: opacity .15s ease-in; }
         .hide-child:hover  .child, .hide-child:focus  .child, .hide-child:active .child { opacity: 1; transition: opacity .15s ease-in; }
         .underline-hover:hover, .underline-hover:focus { text-decoration: underline; }
-        .grow { transform: translateZ(0); transition: transform .25s ease-out; }
-        .grow:hover, .grow:focus { transform: scale(1.05); }
-        .grow:active { transform: scale(.90); }
-        .grow-large { transform: translateZ(0); transition: transform .25s ease-in-out; }
-        .grow-large:hover, .grow-large:focus { transform: scale(1.2); }
-        .grow-large:active { transform: scale(.95); }
-        .pointer { cursor: pointer; }
+        .grow { transform: translateZ(0); transition: transform .25s ease-out,-webkit-transform .25s ease-out;transition: transform .25s ease-out; -moz-osx-font-smoothing: grayscale; backface-visibility: hidden; -webkit-backface-visibility: hidden; -webkit-transform: translateZ(0) }
+        .grow:hover, .grow:focus { transform: scale(1.05); -webkit-transform: scale(1.05); }
+        .grow:active { transform: scale(.9); -webkit-transform: scale(.9); }
+        .grow-large { transform: translateZ(0); transition: transform .25s ease-in-out,-webkit-transform .25s ease-in-out; transition: transform .25s ease-in-out; -moz-osx-font-smoothing: grayscale; backface-visibility: hidden; -webkit-backface-visibility: hidden; -webkit-transform: translateZ(0) }
+        .grow-large:hover, .grow-large:focus { transform: scale(1.2); -webkit-transform: scale(1.2); }
+        .grow-large:active { transform: scale(.95); -webkit-transform: scale(.95); }
+        .pointer, .pointer:hover { cursor: pointer; }
         .shadow-hover { cursor: pointer; position: relative; transition: all .5s cubic-bezier( .165, .84, .44, 1 ); }
-        .shadow-hover::after { content: ''; box-shadow: 0 0 16px 2px rgba( 0, 0, 0, .2 ); border-radius: inherit; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; transition: opacity .5s cubic-bezier( .165, .84, .44, 1 ); }
-        .shadow-hover:hover::after, .shadow-hover:focus::after { opacity: 1; }
+        .shadow-hover:after { content: ""; box-shadow: 0 0 16px 2px rgba( 0, 0, 0, .2 ); border-radius: inherit; opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; transition: opacity .5s cubic-bezier( .165, .84, .44, 1 ); }
+        .shadow-hover:hover:after, .shadow-hover:focus:after { opacity: 1; }
         .bg-animate { transition: background-color .15s ease-in-out; }
         .bg-animate:focus { transition: background-color .15s ease-in-out; }
         .bg-animate:hover { transition: background-color .15s ease-in-out; }
@@ -741,10 +759,33 @@ export const config: Ainsley = {
             '9999': 9999,
             'max': 2147483647,
             'inherit': 'inherit',
-            'initial': 'initial',
+            'initial': 'auto',
             'unset': 'unset'
           }
-        ]
+        ],
+        `
+        .debug * {
+          outline: 1px solid gold
+        }
+        .debug-black * {
+          outline: 1px solid black
+        }
+        .debug-white * {
+          outline: 1px solid white
+        }
+        .debug-grid {
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVR4AWPAC97/9x0eCsAEPgwAVLshdpENIxcAAAAASUVORK5CYII=) 0 0;
+        }
+        .debug-grid-16 {
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR4AWOgCLz/b0epAa6UGuBOqQHOQHLUgFEDnAbcBZ4UGwDOkiCnkIhdgNgNxAYAiYlD+8sEuo8AAAAASUVORK5CYII=) 0 0;
+        }
+        .debug-grid-8-solid {
+          background: #fff url(data:image/gif;base64,R0lGODdhCAAIAPEAAADw/wDx/////wAAACwAAAAACAAIAAACDZQvgaeb/lxbAIKA8y0AOw==) 0 0;
+        }
+        .debug-grid-16-solid {
+          background: #fff url(data:image/gif;base64,R0lGODdhEAAQAPEAAADw/wDx/xXy/////ywAAAAAEAAQAAACIZyPKckYDQFsb6ZqD85jZ2+BkwiRFKehhqQCQgDHcgwEBQA7) 0 0;
+        }
+        `
       ] as AinsleyChildren
     }
   ]

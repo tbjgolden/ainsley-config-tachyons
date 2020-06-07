@@ -3588,6 +3588,15 @@ compare-func@^1.3.1:
     array-ify "^1.0.0"
     dot-prop "^3.0.0"
 
+compare-stylesheet@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/compare-stylesheet/-/compare-stylesheet-1.0.0.tgz#7d3e7ae7ddc75084c841aa5f536a88e177c46601"
+  integrity sha512-sl1o/7hkeBSZkxxrHZl1QNXIj1ae89PQz7nTYvR6/DOzmB0MisYhxGWvl55wE2qLM65pCfekwN6mtFMF57d4Mw==
+  dependencies:
+    "@babel/runtime" "^7.7.7"
+    css-tree "^1.0.0-alpha.39"
+    csso "^4.0.3"
+
 compare-versions@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
@@ -10625,6 +10634,11 @@ table@^5.2.3:
     lodash "^4.17.14"
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
+
+tachyons@^4.12.0:
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.12.0.tgz#6fdfa8360927a46a1efd996a4dcc94f04bd31df0"
+  integrity sha512-2nA2IrYFy3raCM9fxJ2KODRGHVSZNTW3BR0YnlGsLUf1DA3pk3YfWZ/DdfbnZK6zLZS+jUenlUGJsKcA5fUiZg==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
